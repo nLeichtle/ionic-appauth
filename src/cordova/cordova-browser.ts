@@ -44,7 +44,7 @@ export class CordovaBrowser extends Browser {
                 clearsessioncache: 'yes',     
             }
     
-            this.inAppBrowserRef = InAppBrowser.create(url, '_self', options);
+            this.inAppBrowserRef = InAppBrowser.open(url, '_self', options);
 
             if(this.inAppBrowserRef != undefined)
                 this.inAppBrowserRef.on('exit').subscribe(() => this.onCloseFunction());
